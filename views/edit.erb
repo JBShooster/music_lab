@@ -6,5 +6,10 @@
     <input type="text" name="name" id="name" value="<%= @artist["name"] %>">
     <input type="submit" value="Change Name">
   </form>
+  <p><form action="/artists/<%= @artist["id"] %>" method="POST">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="Delete <%= @artist["name"] %>">
+  </form>
+  </p>
   <a href="/artists">Back</a>
 <%=erb :'partials/_footer'%>
