@@ -12,42 +12,41 @@ end
 
 
 get '/' do
-  redirect '/artist'
+  redirect '/artists'
 end
 
-get '/artist' do
+get '/artists' do
   @artist = Artist.all
   erb :index
 end
 
-get '/artist/:id' do
+get '/artists/new' do
+  erb :new
+end
+
+get '/artists/:id' do
   @artist = Artist.find params[:id].to_i 
   erb :show
 end
 
-
-get '/artist/new' do
-  erb :add
-end
-
-get '/artist/:id/edit' do
-  @artist = Artist.find params[:id].
+get '/artists/:id/edit' do
+  @artist = Artist.find params[:id].to_i
   erb :edit
 end
 
-post '/artist' do
+post '/artists' do
   Artist.create params
-  redirect '/artist'
+  redirect '/artists'
 end
 
-put '/artist/:id' do
+put '/artists/:id' do
   m = Artist.find(params[:id].to_i)
   m.name = params[:name]
   m.save
-  redirect '/artist'
+  redirect '/artists'
 end
 
-delete '/artist/:id' do
+delete '/artists/:id' do
   Artist.find(params[:id].to_i).destroy
-  redirect '/artist'
+  redirect '/artists'
 end

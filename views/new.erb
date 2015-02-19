@@ -1,0 +1,9 @@
+<%= erb :'partials/_header' %>
+<h1>Add a new artist</h1>
+  <form action="/artists" method="POST">
+    <label>Name: </label>
+    <input type="text" name="name" id="name" autofocus>
+    <input type="submit" value="Add!">
+  </form>
+  <a href="/artists">Back</a>
+<%=erb :'partials/_footer'%>
