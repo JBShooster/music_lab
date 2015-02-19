@@ -1,0 +1,12 @@
+<%= erb :'partials/_header' %>
+<h1>Here are our artists!</h1>
+  <ul>
+  <% @artists.each do |artist| %>
+  <li><h3><%=artist["id"]%> <%=artist["name"] %></h3>
+  <a href="/artist/<%= artist["id"] %>">Info</a> // 
+  <a href="/artist/edit/<%= artist["id"] %>">Edit</a> // 
+  </li>
+  <% end %>
+  </ul>
+<a href="/artist/new">Add a new artist!</a>
+<%=erb :'partials/_footer'%>
