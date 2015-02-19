@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Show an Artist</title>
+    <link rel="stylesheet" href="/styles.css" type="text/css"></link>
+  </head>
+  <body>
+    <h1><%= @artist[:name] %></h1>
+    <a href="/artists/<%=@artist[:id]%>/edit">Edit</a>
+    <form action="/artists/<%=@artist[:id]%>" method="POST">
+      <input type="hidden" name="_method" value="DELETE">
+      <input type="submit" value="Delete">
+    </form>
+    <br><br>
+    <a href="/artists">Back to all artists</a>
+  </body>
+</html>

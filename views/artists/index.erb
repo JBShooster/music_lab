@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Artists</title>
+  </head>
+  <body>
+    <h1>My Favorite Artists</h1>
+    <ul>
+      <% @artists.each do |musician| %>
+      <li>
+        <a href="/artists/<%=musician[:id]%>"><%= musician[:name] %></a>
+      </li>
+      <% end %>
+    </ul>
+    <a href="/artists/new">Add new artist</a>
+  </body>
+</html>
