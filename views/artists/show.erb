@@ -6,6 +6,9 @@
   </head>
   <body>
     <h1><%= @artist[:name] %></h1>
+
+    <a href="/artists/<%=@artist[:id]%>/songs">View songs</a><br><br>
+
     <a href="/artists/<%=@artist[:id]%>/edit">Edit</a>
     <form action="/artists/<%=@artist[:id]%>" method="POST">
       <input type="hidden" name="_method" value="DELETE">

@@ -1,0 +1,13 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Add Song</title>
+  </head>
+  <body>
+    <h1>Add song for <%= @artist[:name] %></h1>
+    <form action="../songs" method="POST">
+      <input type="test" name="song_title" value="" autofocus>
+      <input type="submit" name="Add"/>
+    </form>
+  </body>
+</html>
